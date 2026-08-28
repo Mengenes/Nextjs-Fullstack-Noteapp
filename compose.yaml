@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+        JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET}
+        JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+        SUPABASE_URL: ${SUPABASE_URL}
+        SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY}
+    ports:
+      - "3000:3000"
+      - "5555:5555"
+    env_file:
+      - .env
